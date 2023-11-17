@@ -16,11 +16,11 @@
             <ul style="font-size:130%;">
                 <li class="list-group-item" style="margin-bottom: 2rem;"><a href="adminpage.php" class="text-lightskyblue text-decoration-none">Home</a></li>
                 <li class="list-group-item" style="margin-bottom: 2rem;"><a href="Employee_registration_save.php" class="text-white text-decoration-none">Employee Registration</a></li>
-                <li class="list-group-item" style="margin-bottom: 2rem;"><a href="" class="text-white text-decoration-none">Employee Report</a></li>
+                <li class="list-group-item" style="margin-bottom: 2rem;"><a href="Employeereport.php" class="text-white text-decoration-none">Employee Report</a></li>
                 <li class="list-group-item" style="margin-bottom: 2rem;"><a href="Payroll.php" class="text-white text-decoration-none">Payroll</a></li>
-                <li class="list-group-item" style="margin-bottom: 2rem;"><a href="" class="text-white text-decoration-none">Payroll Report</a></li>
+                <li class="list-group-item" style="margin-bottom: 2rem;"><a href="Payrollreport.php" class="text-white text-decoration-none">Payroll Report</a></li>
                 <li class="list-group-item" style="margin-bottom: 2rem;"><a href="Cellphone.php" class="text-white text-decoration-none">POS</a></li>
-                <li class="list-group-item" style="margin-bottom: 2rem;"><a href="" class="text-white text-decoration-none">POS Sales Report</a></li>
+                <li class="list-group-item" style="margin-bottom: 2rem;"><a href="POSreport.php" class="text-white text-decoration-none">POS Sales Report</a></li>
                 <li class="list-group-item" style="margin-bottom: 2rem;"><a href="user_account_info.php" class="text-white text-decoration-none">User Account</a></li>
                 <li class="list-group-item" style="margin-bottom: 2rem;"><a href="Login.php" class="text-white text-decoration-none">Logout</a></li>
             </ul>

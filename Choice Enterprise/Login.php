@@ -45,7 +45,7 @@
 </head>
 
 <body style="background-image: url('css/bgsite.jpg');">
-    <div class="container" style="margin-top:15%; background-image: url('https://static.vecteezy.com/system/resources/previews/009/924/607/original/cute-brown-aesthetic-abstract-minimal-background-perfect-for-wallpaper-backdrop-postcard-background-vector.jpg'); background-repeat:no-repeat;">
+    <div class="container" style="margin-top:15%; background-image: url('https://static.vecteezy.com/system/resources/previews/009/924/607/original/cute-brown-aesthetic-abstract-minimal-background-perfect-for-wallpaper-backdrop-postcard-background-vector.jpg'); background-repeat:no-repeat; background-attachment: fixed">
         <img src="https://clipart-library.com/img/1695766.png" alt="Coffee" width="25%" height="25%">
         <h2 style="color:blue;">SDE Web Application</h2>
         <form action="adminpage.php" method="post">

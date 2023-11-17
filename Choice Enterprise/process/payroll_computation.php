@@ -31,16 +31,16 @@
                     $other_loans = "";
                 }
                 //decleration of variables with fix data value for employee info
-                $employee_no = "12345";
-                $department = "Department of Engineering";
-                $firstname = "Heherson";
-                $mname = "Mendiola";
-                $surname = "Aledia";
-                $civil_status = "Single";
-                $designation = "Staff";
-                $qualified_dependents = "ME";
-                $paydate = "October 2, 2023";
-                $emp_status = "Job Order";
+                $employee_no = "";
+                $department = "";
+                $firstname = "";
+                $mname = "";
+                $surname = "";
+                $civil_status = "";
+                $designation = "";
+                $qualified_dependents = "";
+                $paydate = "";
+                $emp_status = "";
                 //decleration of variables where inputs are stored
                 $basic_rate_hour = "";
                 $basic_num_hours_cutoff = "";

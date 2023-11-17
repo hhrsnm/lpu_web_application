@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="js/herson_pos_save.js"></script>
     <title>POS Page</title>
 </head>
 
@@ -18,7 +20,7 @@
                 <li class="list-group-item" style="margin-bottom: 2rem;"><a href="Employee_registration_save.php" class="text-white text-decoration-none">Employee Registration</a></li>
                 <li class="list-group-item" style="margin-bottom: 2rem;"><a href="" class="text-white text-decoration-none">Employee Report</a></li>
                 <li class="list-group-item" style="margin-bottom: 2rem;"><a href="Payroll.php" class="text-white text-decoration-none">Payroll</a></li>
-                <li class="list-group-item" style="margin-bottom: 2rem;"><a href="" class="text-white text-decoration-none">Payroll Report</a></li>
+                <li class="list-group-item" style="margin-bottom: 2rem;"><a href="Payrollreport.php" class="text-white text-decoration-none">Payroll Report</a></li>
                 <li class="list-group-item" style="margin-bottom: 2rem;"><a href="Clothes.php" class="text-lightskyblue text-decoration-none">POS</a></li>
                 <li class="list-group-item" style="margin-bottom: 2rem;"><a href="" class="text-white text-decoration-none">POS Sales Report</a></li>
                 <li class="list-group-item" style="margin-bottom: 2rem;"><a href="user_account_info.php" class="text-white text-decoration-none">User Account</a></li>
@@ -224,7 +226,7 @@
                                         <button type="button" class="btn btn-danger w-100" onclick="handleNew()">New</button>
                                     </div>
                                     <div class="col">
-                                        <button type="button" class="btn btn-warning w-100">Save</button>
+                                        <button type="button" id="save" class="btn btn-warning w-100">Save</button>
                                     </div>
                                     <div class="col">
                                         <button type="button" class="btn btn-dark w-100">Update</button>

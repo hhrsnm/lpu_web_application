@@ -1,7 +1,8 @@
 <?php
 error_reporting(E_ALL);
 ini_set("display_errors", "On");
-require_once('process/payroll_computation.php');
+include 'process/payroll_computation.php';
+include 'process/payroll_search.php'
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,16 +25,16 @@ require_once('process/payroll_computation.php');
             <ul style="font-size:130%;">
                 <li class="list-group-item" style="margin-bottom: 2rem;"><a href="adminpage.php" class="text-white text-decoration-none">Home</a></li>
                 <li class="list-group-item" style="margin-bottom: 2rem;"><a href="Employee_registration_save.php" class="text-white text-decoration-none">Employee Registration</a></li>
-                <li class="list-group-item" style="margin-bottom: 2rem;"><a href="" class="text-white text-decoration-none">Employee Report</a></li>
+                <li class="list-group-item" style="margin-bottom: 2rem;"><a href="Employeereport.php" class="text-white text-decoration-none">Employee Report</a></li>
                 <li class="list-group-item" style="margin-bottom: 2rem;"><a href="Payroll.php" class="text-lightskyblue text-decoration-none">Payroll</a></li>
-                <li class="list-group-item" style="margin-bottom: 2rem;"><a href="" class="text-white text-decoration-none">Payroll Report</a></li>
+                <li class="list-group-item" style="margin-bottom: 2rem;"><a href="Payrollreport.php" class="text-white text-decoration-none">Payroll Report</a></li>
                 <li class="list-group-item" style="margin-bottom: 2rem;"><a href="Cellphone.php" class="text-white text-decoration-none">POS</a></li>
-                <li class="list-group-item" style="margin-bottom: 2rem;"><a href="" class="text-white text-decoration-none">POS Sales Report</a></li>
+                <li class="list-group-item" style="margin-bottom: 2rem;"><a href="POSreport.php" class="text-white text-decoration-none">POS Sales Report</a></li>
                 <li class="list-group-item" style="margin-bottom: 2rem;"><a href="user_account_info.php" class="text-white text-decoration-none">User Account</a></li>
                 <li class="list-group-item" style="margin-bottom: 2rem;"><a href="Login.php" class="text-white text-decoration-none">Logout</a></li>
             </ul>
         </div>
-        <div class="col-8  flex-grow-1" style="background-image:url('css/bgsite.jpg');">
+        <div class="col-8  flex-grow-1" style="background-image:url('css/bgsite.jpg'); background-attachment: fixed;">
 
             <div class="container border" style="background-color:floralwhite;">
             
@@ -57,7 +58,7 @@ require_once('process/payroll_computation.php');
                                         <input type="text" class="form-control input_box1" id="department" name="department" value="<?php echo $department; ?>" disabled>
                                     </div>
                                     <div>
-                                      <span><button type="submit" name="cancel" class="btn btndanger" style="padding:5px; background-color:red; width:100px; margin-left:180px;">Search &#128269</button></span>
+                                      <span><button type="submit" name="cancel" id="search" class="btn btndanger" style="padding:5px; background-color:red; width:100px; margin-left:180px;">Search &#128269</button></span>
                                     </div>
                                 </div>
                                 <div class="payrol_form_group1" style="width:50%; margin:right; margin-top:36px;">
@@ -233,4 +234,12 @@ require_once('process/payroll_computation.php');
             </div>
         </div>
 </body>
+<script>
+    $(document).ready(function(){
+        $(".clickable").click(function(){
+            let id = document.getElementById("employee_no").value
+            window.location = "Payroll.php?search=" + id
+        })
+    })
+</script>
 </html>

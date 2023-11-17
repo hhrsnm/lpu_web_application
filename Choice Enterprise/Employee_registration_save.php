@@ -4,8 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="js/herson_empreg_save.js"></script>
     <link rel="stylesheet" href="css/employee_registration.css">
 
     <title>Employee Registration</title>
@@ -16,28 +19,30 @@
         <div class="col bg-dark vh-100 sticky-top" style="width: 100px;">
             <h2 style="margin-bottom: 2rem; text-align:center; font-family:algerian; color:white;">Herson's Choice Enterprise</h2>
             <ul style="font-size:130%;">
-            <li class="list-group-item" style="margin-bottom: 2rem;"><a href="adminpage.php" class="text-white text-decoration-none">Home</a></li>
+                <li class="list-group-item" style="margin-bottom: 2rem;"><a href="adminpage.php" class="text-white text-decoration-none">Home</a></li>
                 <li class="list-group-item" style="margin-bottom: 2rem;"><a href="Employee_registration_save.php" class="text-lightskyblue text-decoration-none">Employee Registration</a></li>
-                <li class="list-group-item" style="margin-bottom: 2rem;"><a href="" class="text-white text-decoration-none">Employee Report</a></li>
+                <li class="list-group-item" style="margin-bottom: 2rem;"><a href="Employeereport.php" class="text-white text-decoration-none">Employee Report</a></li>
                 <li class="list-group-item" style="margin-bottom: 2rem;"><a href="Payroll.php" class="text-white text-decoration-none">Payroll</a></li>
-                <li class="list-group-item" style="margin-bottom: 2rem;"><a href="" class="text-white text-decoration-none">Payroll Report</a></li>
+                <li class="list-group-item" style="margin-bottom: 2rem;"><a href="Payrollreport.php" class="text-white text-decoration-none">Payroll Report</a></li>
                 <li class="list-group-item" style="margin-bottom: 2rem;"><a href="Cellphone.php" class="text-white text-decoration-none">POS</a></li>
-                <li class="list-group-item" style="margin-bottom: 2rem;"><a href="" class="text-white text-decoration-none">POS Sales Report</a></li>
+                <li class="list-group-item" style="margin-bottom: 2rem;"><a href="POSreport.php" class="text-white text-decoration-none">POS Sales Report</a></li>
                 <li class="list-group-item" style="margin-bottom: 2rem;"><a href="user_account_info.php" class="text-white text-decoration-none">User Account</a></li>
                 <li class="list-group-item" style="margin-bottom: 2rem;"><a href="Login.php" class="text-white text-decoration-none">Logout</a></li>
             </ul>
         </div>
-        <div class="col-8  flex-grow-1" style="background-color:floralwhite;"> 
-            <form id="pic-upload" class="a-form" enctype="multipart/form-data" method="post" width='840'>
-                <h1 style="text-align:center; margin-bottom:30px; font-size:47px;
-                    font-family:Algerian; color:black"><b>Herson`s Employee Personal Information</b></h1>
-                    <div class="a-form-group mt-3" style="float:left; clear:block; width:20%;">
-                    <div id="pic-box" style='width:170px; height:150px;
-                    overflow:hidden; margin-top:7px; margin-left:5px; background:none; border:thin
-                    solid #d3d3d3'></div>
-                    <input type="file" style="margin-top:10px; text-align:center;" id="uploadfile" name="uploadfile" value="" />
-                </div>
-            </form>
+        <div class="col-8  flex-grow-1" style="background-color:white;"> 
+            <div class="row" style="margin-bottom:-40px; padding-left:10px;">
+                <form id="pic-upload" class="a-form" enctype="multipart/form-data" method="post" width='840'>
+                    <h1 style="text-align:center; margin-bottom:30px; font-size:47px;
+                        font-family:Algerian; color:black"><b>Herson`s Employee Personal Information</b></h1>
+                        <div class="a-form-group mt-3" style="float:left; clear:block; width:20%;">
+                        <div id="pic-box" style='width:170px; height:150px;
+                        overflow:hidden; margin-top:7px; margin-left:5px; background:none; border:thin
+                        solid #d3d3d3'></div>
+                        <input type="file" style="margin-top:10px; text-align:center;" id="uploadfile" name="uploadfile" value="" />
+                    </div>
+                </form>
+            </div>
             <form id="form_employee_registration_save" class="a-form" action="" method="post" width='840'>
                 <div class="a-form-group mt-3" width='480'>
                     <div class="a-fields-group mt-0">
@@ -651,7 +656,7 @@
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary" id="savebtn" name="savebtn" style="width:130px;">Save</button>
+                <button type="submit" class="btn btn-primary" id="save" name="savebtn" style="width:130px;">Save</button>
                 <button type="reset" class="btn btn-outline-secondary" id="cancelbtn" name="cancelbtn" style="width:130px;">Cancel</button>
             </form>
        
@@ -659,5 +664,4 @@
 
     </div>
 </body>
-
 </html>
