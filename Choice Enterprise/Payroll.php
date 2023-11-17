@@ -58,7 +58,7 @@ include 'process/payroll_search.php'
                                         <input type="text" class="form-control input_box1" id="department" name="department" value="<?php echo $department; ?>" disabled>
                                     </div>
                                     <div>
-                                      <span><button type="submit" name="cancel" id="search" class="btn btndanger" style="padding:5px; background-color:red; width:100px; margin-left:180px;">Search &#128269</button></span>
+                                      <span><button type="button" name="cancel" id="search" class="btn btndanger clickable" style="padding:5px; background-color:red; width:100px; margin-left:180px;">Search &#128269</button></span>
                                     </div>
                                 </div>
                                 <div class="payrol_form_group1" style="width:50%; margin:right; margin-top:36px;">

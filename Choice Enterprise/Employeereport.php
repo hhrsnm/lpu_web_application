@@ -1,7 +1,7 @@
 <?php
 error_reporting(E_ALL);
 ini_set("display_errors", "On");
-require_once('process/employee_report.php');
+include 'process/employee_report.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,7 +42,7 @@ require_once('process/employee_report.php');
                 </form>
                 <section>
                     <div class="table-responsive">
-                        <table class="table table-bordered bg-white rounded small">
+                        <table class="table table-bordered bg-white rounded small table-hover">
                             <thead class="border-bottom">
                                 <tr>
                                     <th class="py-6 ps-6 bg-dark"><span class="btn p-0 d-flex align-items-center text-white fw-bold px-3  pe-none">Employee Number</span></th>
@@ -60,11 +60,11 @@ require_once('process/employee_report.php');
                                 if ($result) {
                                     while ($item = $result->fetch_assoc()) {
                                         echo "
-                                <tr class='table'>
+                                <tr class='clickable-row' style='cursor: pointer' data-href='Employee_registration_save.php?id={$item['id']}'>
                                     <td class='py-6 ps-6'>$item[employee_no]</td>
                                     <td class='py-6 ps-6'>$item[fname] $item[mname] $item[lname]</td>
                                     <td class='py-6 ps-6'>$item[birth_date]</td>
-                                    <td class='py-6 ps-6'>ME</td>
+                                    <td class='py-6 ps-6'>$item[qualified_dependent_status]</td>
                                     <td class='py-6 ps-6'>$item[civil_status]</td>
                                     <td class='py-6 ps-6'>$item[department]</td>
                                     <td class='py-6 ps-6'>$item[designation]</td>
@@ -86,5 +86,11 @@ require_once('process/employee_report.php');
 
     </div>
 </body>
-
+<script>
+    $(document).ready(function(){
+        $(".clickable-row").click(function(){
+            window.location = $(this).data("href")
+        })
+    })
+</script>
 </html>
