@@ -130,6 +130,33 @@
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     // to press Calculate Gross Income button
                     if (isset($_POST["calculate_gross_income"])) {
+                        /*
+                        $employee_no = $_POST['employee_no'];
+                        $firstname=$_POST['firstname'];
+                        $mname=$_POST['mname'];
+                        $surname=$_POST['surname'];
+                        $civil_status=$_POST['civil_status'];
+                        $designation=$_POST['designation'];
+                        $department=$_POST['department'];
+                        $pagibig_loan=$_POST['paydate'];
+                        $emp_status=$_POST['emp_status'];
+                        $basic_rate_hour = $_POST["basic_rate_hour"];
+                        $basic_num_hours_cutoff = $_POST["basic_num_hours_cutoff"];
+                        $hono_rate_hour = $_POST["hono_rate_hour"];
+                        $hono_num_hours_cutoff = $_POST["hono_num_hours_cutoff"];
+                        $other_rate_hour = $_POST["other_rate_hour"];
+                        $other_num_hours_cutoff = $_POST["other_num_hours_cutoff"];
+                        $sss_loan = $_POST["sss_loan"];
+                        $pagibig_loan = $_POST["pagibig_loan"];
+                        $fs_deposit = $_POST["fs_deposit"];
+                        $fs_loan = $_POST["fs_loan"];
+                        $salary_loan = $_POST["salary_loan"];
+                        $other_loans = $_POST["other_loans"];
+                        $qualified_dependents = $_POST["qualified_dependents"];
+                        */
+                        
+
+                        $employee_no = $_POST['employee_no'];
                         $basic_rate_hour = $_POST["basic_rate_hour"];
                         $basic_num_hours_cutoff = $_POST["basic_num_hours_cutoff"];
                         $hono_rate_hour = $_POST["hono_rate_hour"];
@@ -162,6 +189,7 @@
 
                         // to press Calculate Net Income button
                     } else if (isset($_POST["calculate_net_income"])) {
+                        $employee_no = $_POST['employee_no'];
                         $basic_rate_hour = $_POST["basic_rate_hour"];
                         $basic_num_hours_cutoff = $_POST["basic_num_hours_cutoff"];
                         $hono_rate_hour = $_POST["hono_rate_hour"];

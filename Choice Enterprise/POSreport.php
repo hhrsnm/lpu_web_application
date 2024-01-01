@@ -10,7 +10,8 @@ require_once('process/pos_report.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
     <title>POS Report Page</title>
 </head>
 
@@ -19,15 +20,15 @@ require_once('process/pos_report.php');
         <div class="col bg-dark vh-100 sticky-top" style="width: 100px;">
             <h2 style="margin-bottom: 2rem; text-align:center; font-family:algerian; color:white;">Herson's Choice Enterprise</h2>
             <ul style="font-size:130%;">
-                <li class="list-group-item" style="margin-bottom: 2rem;"><a href="adminpage.php" class="text-white text-decoration-none">Home</a></li>
-                <li class="list-group-item" style="margin-bottom: 2rem;"><a href="Employee_registration_save.php" class="text-white text-decoration-none">Employee Registration</a></li>
-                <li class="list-group-item" style="margin-bottom: 2rem;"><a href="Employeereport.php" class="text-white text-decoration-none">Employee Report</a></li>
-                <li class="list-group-item" style="margin-bottom: 2rem;"><a href="Payroll.php" class="text-white text-decoration-none">Payroll</a></li>
-                <li class="list-group-item" style="margin-bottom: 2rem;"><a href="Payrollreport.php" class="text-white text-decoration-none">Payroll Report</a></li>
-                <li class="list-group-item" style="margin-bottom: 2rem;"><a href="Cellphone.php" class="text-white text-decoration-none">POS</a></li>
-                <li class="list-group-item" style="margin-bottom: 2rem;"><a href="POSreport.php" class="text-lightskyblue text-decoration-none">POS Sales Report</a></li>
-                <li class="list-group-item" style="margin-bottom: 2rem;"><a href="user_account_info.php" class="text-white text-decoration-none">User Account</a></li>
-                <li class="list-group-item" style="margin-bottom: 2rem;"><a href="Login.php" class="text-white text-decoration-none">Logout</a></li>
+                <li class="list-group-item" style="margin-bottom: 2rem;"><a href="adminpage.php" class="text-white text-decoration-none hover-me">Home</a></li>
+                <li class="list-group-item <?php echo $user_privilege == 1 ? '' : 'd-none' ?>" style="margin-bottom: 2rem;"><a href="Employee_registration_save.php" class="text-white text-decoration-none hover-me">Employee Registration</a></li>
+                <li class="list-group-item <?php echo $user_privilege == 1 ? '' : 'd-none' ?>" style="margin-bottom: 2rem;"><a href="Employeereport.php" class="text-white text-decoration-none hover-me">Employee Report</a></li>
+                <li class="list-group-item <?php echo ($user_privilege == 1 || $user_privilege == 2) ? '' : 'd-none' ?>" style="margin-bottom: 2rem;"><a href="Payroll.php" class="text-white text-decoration-none hover-me">Payroll</a></li>
+                <li class="list-group-item <?php echo ($user_privilege == 1 || $user_privilege == 2) ? '' : 'd-none' ?>" style="margin-bottom: 2rem;"><a href="Payrollreport.php" class="text-white text-decoration-none hover-me">Payroll Report</a></li>
+                <li class="list-group-item <?php echo ($user_privilege == 1 || $user_privilege == 3) ? '' : 'd-none' ?>" style="margin-bottom: 2rem;"><a href="Cellphone.php" class="text-white text-decoration-none hover-me">POS</a></li>
+                <li class="list-group-item <?php echo ($user_privilege == 1 || $user_privilege == 3) ? '' : 'd-none' ?>" style="margin-bottom: 2rem;"><a href="POSreport.php" class="text-lightskyblue text-decoration-none hover-me">POS Sales Report</a></li>
+                <li class="list-group-item <?php echo $user_privilege == 1 ? '' : 'd-none' ?>" style="margin-bottom: 2rem;"><a href="user_account_info.php" class="text-white text-decoration-none hover-me">User Account</a></li>
+                <li class="list-group-item" style="margin-bottom: 2rem;"><a href="Login.php" class="text-white text-decoration-none hover-me">Logout</a></li>
             </ul>
         </div>
         <div class="col-8  flex-grow-1" style="background-image:url('css/b1gsite.jpg'); text-align:center;"> 
@@ -61,7 +62,7 @@ require_once('process/pos_report.php');
                                 if ($result) {
                                     while ($item = $result->fetch_assoc()) {
                                         echo "
-                                <tr class='table'>
+                                <tr class='clickable-row' style='cursor: pointer' data-href='{$item['item_type']}.php?id={$item['id']}'>
                                     <td class='py-6 ps-6'>$item[item_name]</td>
                                     <td class='py-6 ps-6'>$item[quantity]</td>
                                     <td class='py-6 ps-6'>$item[price]</td>
@@ -88,5 +89,12 @@ require_once('process/pos_report.php');
 
     </div>
 </body>
+<script>
+    $(document).ready(function() {
+        $(".clickable-row").click(function() {
+            window.location = $(this).data("href")
+        })
+    })
+</script>
 
 </html>

@@ -1,0 +1,16 @@
+.hover-me{
+    transition: .4s ease;
+}
+.hover-me:hover{
+    padding-left: 30px;
+    -webkit-padding-left: 30px;
+    -ms-padding-left: 30px;
+}
+.hover-pos{
+    transition: .3s ease;
+}
+.hover-pos:hover{
+    transform: scale(1.13);
+    -webkit-transform: scale(1.13);
+    -ms-transform: scale(1.13);
+}

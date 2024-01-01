@@ -15,6 +15,15 @@ $(document).ready(function () {
         var fieldValue = $(this).val();
         formData[fieldName] = fieldValue;
       });
+      
+      const currentURL = window.location.pathname;
+      const segments = currentURL
+      .split("/")
+      .filter((segment) => segment.trim() !== "");
+      const lastSegment = segments[segments.length - 1];
+
+      formData['item_type'] = lastSegment.replace('.php', '');; 
+
       console.log(formData)
 
       $.ajax({
