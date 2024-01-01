@@ -32,9 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		
 		exit();
 	} else {
-		echo "<script>";
-		echo "alert('Invalid credentials!');";
-		echo "</script>";
+		
 	}
 }
 ?>
@@ -47,11 +45,15 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
     <title>Login Page</title>
     <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
+            background: url('css/bgsite.jpg');
             text-align: center;
+            background-size: cover;
+            background-repeat: no-repeat;
         }
 
         .container {
@@ -84,13 +86,21 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         input[type="submit"]:hover {
             background-color: #0056b3;
         }
+        .login-me{
+            background-color:white;
+            transition: .3s ease;
+        }
+        .login-me:hover{
+            background-color: yellow;
+            transform: scale(1.12);
+        }
     </style>
 </head>
 
-<body style="background-image: url('css/bgsite.jpg');">
+<body>
     <div class="container" style="margin-top:15%; background-image: url('https://static.vecteezy.com/system/resources/previews/009/924/607/original/cute-brown-aesthetic-abstract-minimal-background-perfect-for-wallpaper-backdrop-postcard-background-vector.jpg'); background-repeat:no-repeat; background-attachment: fixed">
         <img src="https://clipart-library.com/img/1695766.png" alt="Coffee" width="25%" height="25%">
-        <h2 style="color:blue;">SDE Web Application</h2>
+        <h2 style="color:peru; font-family:copperplate;">SDE Web Application</h2>
         <form class="validate-form" method="post">
             <div class="validate-input" data-validate="Enter username" >
                 <input type="text" placeholder="Username" name="user">
@@ -98,8 +108,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             <div class="validate-input" data-validate="Enter password">
                 <input type="password" placeholder="Password" name="password">
             </div>
-                <div class="buttons" style=margin-top:10px;>
-                <button type="submit" class="login-button" style="height: 40px; width:100px; background-color:lightskyblue; font-size:15px;">Login</button>
+                <div class="buttons " style="margin-top:10px;">
+                <button type="submit" class="login-button login-me rounded" style="height: 40px; width:100px; font-size:15px;">Login</button>
                 </div>
             
         </form>

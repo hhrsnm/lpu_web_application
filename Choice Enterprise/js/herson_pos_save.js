@@ -34,6 +34,7 @@ $(document).ready(function () {
         success: function (result) {
           if (result.ok) {
             alert("Data successfully added!");
+            console.log("e")
           }
         },
       });

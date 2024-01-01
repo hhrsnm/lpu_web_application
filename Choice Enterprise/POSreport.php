@@ -2,6 +2,7 @@
 error_reporting(E_ALL);
 ini_set("display_errors", "On");
 require_once('process/pos_report.php');
+include 'process/Session_check.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,6 +12,7 @@ require_once('process/pos_report.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <title>POS Report Page</title>
 </head>
@@ -27,7 +29,7 @@ require_once('process/pos_report.php');
                 <li class="list-group-item <?php echo ($user_privilege == 1 || $user_privilege == 2) ? '' : 'd-none' ?>" style="margin-bottom: 2rem;"><a href="Payrollreport.php" class="text-white text-decoration-none hover-me">Payroll Report</a></li>
                 <li class="list-group-item <?php echo ($user_privilege == 1 || $user_privilege == 3) ? '' : 'd-none' ?>" style="margin-bottom: 2rem;"><a href="Cellphone.php" class="text-white text-decoration-none hover-me">POS</a></li>
                 <li class="list-group-item <?php echo ($user_privilege == 1 || $user_privilege == 3) ? '' : 'd-none' ?>" style="margin-bottom: 2rem;"><a href="POSreport.php" class="text-lightskyblue text-decoration-none hover-me">POS Sales Report</a></li>
-                <li class="list-group-item <?php echo $user_privilege == 1 ? '' : 'd-none' ?>" style="margin-bottom: 2rem;"><a href="user_account_info.php" class="text-white text-decoration-none hover-me">User Account</a></li>
+                <li class="list-group-item <?php echo $user_privilege == 1 ? '' : 'd-none' ?>" style="margin-bottom: 2rem;"><a href="user_account_table.php" class="text-white text-decoration-none hover-me">User Account</a></li>
                 <li class="list-group-item" style="margin-bottom: 2rem;"><a href="Login.php" class="text-white text-decoration-none hover-me">Logout</a></li>
             </ul>
         </div>
@@ -43,7 +45,7 @@ require_once('process/pos_report.php');
                 </form>
                 <section>
                     <div class="table-responsive">
-                        <table class="table table-bordered bg-white rounded small">
+                        <table class="table table-bordered rounded small table-hover">
                             <thead class="border-bottom">
                                 <tr>
                                     <th class="py-6 ps-6 bg-dark"><span class="btn p-0 d-flex align-items-center text-white fw-bold px-3 pe-none">Product Name</span></th>

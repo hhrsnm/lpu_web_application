@@ -2,7 +2,8 @@
 error_reporting(E_ALL);
 ini_set("display_errors", "On");
 include 'process/payroll_computation.php';
-include 'process/payroll_search.php'
+include 'process/payroll_search.php';
+include 'process/Session_check.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +32,7 @@ include 'process/payroll_search.php'
                 <li class="list-group-item <?php echo ($user_privilege == 1 || $user_privilege == 2) ? '' : 'd-none' ?>" style="margin-bottom: 2rem;"><a href="Payrollreport.php" class="text-white text-decoration-none hover-me">Payroll Report</a></li>
                 <li class="list-group-item <?php echo ($user_privilege == 1 || $user_privilege == 3) ? '' : 'd-none' ?>" style="margin-bottom: 2rem;"><a href="Cellphone.php" class="text-white text-decoration-none hover-me">POS</a></li>
                 <li class="list-group-item <?php echo ($user_privilege == 1 || $user_privilege == 3) ? '' : 'd-none' ?>" style="margin-bottom: 2rem;"><a href="POSreport.php" class="text-white text-decoration-none hover-me">POS Sales Report</a></li>
-                <li class="list-group-item <?php echo $user_privilege == 1 ? '' : 'd-none' ?>" style="margin-bottom: 2rem;"><a href="user_account_info.php" class="text-white text-decoration-none hover-me">User Account</a></li>
+                <li class="list-group-item <?php echo $user_privilege == 1 ? '' : 'd-none' ?>" style="margin-bottom: 2rem;"><a href="user_account_table.php" class="text-white text-decoration-none hover-me">User Account</a></li>
                 <li class="list-group-item" style="margin-bottom: 2rem;"><a href="Login.php" class="text-white text-decoration-none hover-me">Logout</a></li>
             </ul>
         </div>

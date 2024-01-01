@@ -1,3 +1,6 @@
+<?php
+    include 'process/Session_check.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
